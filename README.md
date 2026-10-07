@@ -1,11 +1,13 @@
 # IP_Deconvolution
-Using wiener filter to denoise blurred image and blurred & Gaussain noised image
-- C++ / OpenCV 사용
-- PSF kernel normalization
-- DFT를 이용한 영상 및 kernel의 주파수 영역 변환
-- Wiener Filter를 이용한 Deconvolution 구현
-- Blur 및 Gaussian noise가 포함된 영상 복원
-- Noise 수준에 따른 K 값 조절 및 결과 비교
+Blur 된 이미지를 Winer Filter로 복원하는 Deconvolution
+# 주파수 영역으로 변환
+- 공간에서 blur는 convolution 연산이지만, 주파수 영역에서는 단순 곱셉으로 표현이 가능.
+- DFT를 이용해 주파수 영역으로 변환하여 deconvolution을 효율적으로 수행
+# Deconvolution
+- Blur 과정에서 곱해진 point spread function의 영향을 역으로 제거하여 원본 영상의 주파수 성분을 복원
+- 하지만 단순 PSF로 나누는 방식은 PSF가 0에 가까울 경우 noise까지 커질 수 있음.
+# Wiener filter
+- noise 커지는 것을 방지하기 위해 
 
 # Wiener filter
 
